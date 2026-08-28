@@ -1,0 +1,12 @@
+id,date,event_name,gprd,gprd_act,gprd_threat,gold_price,silver_price
+1,1986-04-16, U.S. Bombing of Libya,340.54,555.54,321.79,339.0,5.41
+2,1991-01-15, Gulf War - Operation Desert Storm,572.3,464.17,717.86,399.0,4.2
+3,2001-10-03, U.S. Invades Afghanistan,818.96,1328.83,450.87,289.7,4.6
+4,2002-09-13, Bush Seeks UN Approval for Iraq War; Putin Threatens War with Georgia,301.14,306.1,319.15,316.85,4.55
+5,2003-02-14, War Fears U.S./Iraq; Terrorism in UK; Tension with North Korea,344.46,331.95,448.74,351.0,4.53
+6,2003-03-21, Beginning of the Iraq War,595.03,924.46,479.79,326.18,4.35
+7,2004-08-03, Terrorist Threats in New York and Washington,344.62,469.76,374.29,393.88,6.66
+8,2005-07-08, London Bombings 7/7,469.2,879.39,249.7,423.05,7.0
+9,2015-11-17, Paris Terrorist Attacks,354.05,551.2,266.17,1070.37,14.2
+10,2020-01-07, U.S. / Iran Tensions Escalate,413.46,147.21,622.12,1573.99,18.39
+11,2022-02-25,Russia / Ukraine Tensions,515.89,162.41,797.75,1887.56,24.19
