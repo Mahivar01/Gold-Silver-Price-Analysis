@@ -2,14 +2,14 @@ import os
 import pandas as pd
 import sqlite3
 
-# ── Path Configuration ───────────────────────────────────────────────────────
+# ── Path Configuration ───
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 DB_DIR   = os.path.join(BASE_DIR, "db")
 
 os.makedirs(DB_DIR, exist_ok=True)
 
-# ── Connect and Create Schema ────────────────────────────────────────────────
+# ── Connect and Create Schema ────
 conn = sqlite3.connect(os.path.join(DB_DIR, "GS_Analysis.db"))
 cur  = conn.cursor()
 
@@ -64,7 +64,7 @@ CREATE TABLE annual_summary (
 );
 """)
 
-# ── Load daily_prices ────────────────────────────────────────────────────────
+# ── Load daily_prices ──────
 df = pd.read_csv(os.path.join(DATA_DIR, "Gold_Silver_cleaned.csv"), parse_dates=["DATE"])
 
 df_db = df[[
@@ -79,7 +79,7 @@ df_db["date"] = df_db["date"].astype(str)
 df_db.to_sql("daily_prices", conn, if_exists="append", index=False)
 print(f"Loaded {len(df_db)} rows -> daily_prices")
 
-# ── Load geopolitical_events ─────────────────────────────────────────────────
+# ── Load geopolitical_events ─────
 events = df[df["HAS_EVENT"] == 1][
     ["DATE", "EVENT", "GPRD", "GPRD_ACT", "GPRD_THREAT", "GOLD_PRICE", "SILVER_PRICE"]
 ].copy()
@@ -88,7 +88,7 @@ events["date"] = events["date"].astype(str)
 events.to_sql("geopolitical_events", conn, if_exists="append", index=False)
 print(f"Loaded {len(events)} rows -> geopolitical_events")
 
-# ── Load annual_summary ──────────────────────────────────────────────────────
+# ── Load annual_summary ────
 ann = pd.read_csv(os.path.join(DATA_DIR, "Annual_Analysis.csv"))
 ann_db = ann[["YEAR", "GOLD_ANNUAL_RETURN_%", "SILVER_ANNUAL_RETURN_%", "AVG_GPRD",
               "avg_gold_price", "avg_silver_price"]].copy()
