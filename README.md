@@ -72,13 +72,13 @@ python scripts/05_exprt_pbix.py      # Export CSVs for Power BI
 python scripts/06_annual_summ.py     # Add YoY return columns to AnnualSummary CSV
 ```
 
-> Scripts must run in order — each one depends on files created by the previous step (e.g. script 06 adds columns to the CSV that script 05 exports, rather than regenerating it from scratch).
+> Scripts must run in order as each one depends on files created by the previous step (e.g. script 06 adds columns to the CSV that script 05 exports, rather than regenerating it from scratch).
 
-> **Note:** The raw source file `Gold-Silver-GeopoliticalRisk_HistoricalData.csv` is already included in `data/`, along with every generated output (`Gold_Silver_cleaned.csv`, the SQLite database, the charts, and the Power BI exports) — so you can either browse the results directly or re-run the full pipeline from scratch.
+> **Note:** The raw source file `Gold-Silver-GeopoliticalRisk_HistoricalData.csv` is already included in `data/`, along with every generated output (`Gold_Silver_cleaned.csv`, the SQLite database, the charts, and the Power BI exports), so you can either browse the results directly or re-run the full pipeline from scratch.
 
 ## Key Findings
 
-- Gold shows a small but statistically significant positive correlation with GPRD (r ≈ 0.09, p < 0.001) — geopolitical risk alone explains only a modest share of gold's price movement
+- Gold shows a small but statistically significant positive correlation with GPRD (r ≈ 0.09, p < 0.001), geopolitical risk alone explains only a modest share of gold's price movement
 - Gold's average change in the 30 days following a major geopolitical event was slightly negative (≈ -0.6%) across the 11 flagged events, though individual events varied widely (from -7.8% to +3.7%)
 - The Gold/Silver ratio spiked to ~124:1 on March 18, 2020, during the COVID-19 shock
 - The U.S. invasion of Afghanistan (Oct 2001) was the highest-GPRD event in the dataset, followed by the start of the Iraq War (2003) and the Gulf War (1991)
