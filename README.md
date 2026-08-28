@@ -3,9 +3,9 @@
 An end-to-end data analysis project examining 40 years of gold and silver commodity prices against the Geopolitical Risk Index (GPRD), from January 1985 to September 2025.
 
 ## Project Stack
-- **Python** — data cleaning, EDA, statistical analysis
-- **SQLite** — relational data modelling and analytical queries
-- **Power BI** — interactive 3-page dashboard
+- **Python** - data cleaning, EDA, statistical analysis
+- **SQLite** - relational data modelling and analytical queries
+- **Power BI** - interactive 3-page dashboard
 
 ## Folder Structure
 
