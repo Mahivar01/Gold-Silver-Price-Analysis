@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# ── Path Configuration ───────────────────────────────────────────────────────
+# ── Path Configuration ───
 BASE_DIR  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR  = os.path.join(BASE_DIR, "data")
 CHART_DIR = os.path.join(BASE_DIR, "charts")
@@ -12,13 +12,13 @@ CHART_DIR = os.path.join(BASE_DIR, "charts")
 os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(CHART_DIR, exist_ok=True)
 
-# ── Data Loading and Inspection ──────────────────────────────────────────────
+# ── Data Loading and Inspection ───
 df = pd.read_csv(os.path.join(DATA_DIR, "Gold-Silver-GeopoliticalRisk_HistoricalData.csv"))
 print(df.shape)
 print(df.dtypes)
 print(df.isnull().sum())
 
-# ── Cleaning ─────────────────────────────────────────────────────────────────
+# ── Cleaning ───
 df["DATE"] = pd.to_datetime(df["DATE"])
 df.sort_values("DATE", inplace=True)
 df.reset_index(drop=True, inplace=True)
@@ -34,7 +34,7 @@ df[gprd_cols] = df[gprd_cols].interpolate(method="linear")
 # Event flagging
 df["HAS_EVENT"] = df["EVENT"].notna().astype(int)
 
-# ── Feature Engineering ───────────────────────────────────────────────────────
+# ── Feature Engineering ───
 df["GOLD_SILVER_RATIO"]   = df["GOLD_PRICE"] / df["SILVER_PRICE"]
 df["GOLD_VOLATILITY_30"]  = df["GOLD_PRICE"].pct_change().rolling(30).std() * np.sqrt(252)
 df["SILVER_VOLATILITY_30"]= df["SILVER_PRICE"].pct_change().rolling(30).std() * np.sqrt(252)
@@ -49,7 +49,7 @@ print(df.tail())
 df.to_csv(os.path.join(DATA_DIR, "Gold_Silver_cleaned.csv"), index=False)
 print("Clean CSV saved.")
 
-# ── EDA Visualisations ────────────────────────────────────────────────────────
+# ── EDA Visualisations ──
 plt.style.use("seaborn-v0_8-darkgrid")
 
 # 1. Price History
